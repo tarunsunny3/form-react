@@ -23,19 +23,20 @@ const Form = () => {
     const handleInputChange = (event, type)=>{
 
         if(type == "Title"){
+            setTitle(event.target.value);
             if(event.target.value.length === 0){
                 setTitleError({isError: true, errorMsg: "Please enter a value for TITLE"});
                 return;
             }
             setTitleError({isError: false, errorMsg: ""});
-            setTitle(event.target.value);
+            
         }else if(type == "Body"){
+            setBody(event.target.value);
             if(event.target.value.length === 0){
                 setBodyError({isError: true, errorMsg: "Please enter a value for BODY"});
                 return;
             }
             setBodyError({isError: false, errorMsg: ""});
-            setBody(event.target.value);
         }
     }
     useEffect(() => {
